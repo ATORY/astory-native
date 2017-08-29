@@ -1,121 +1,121 @@
 import { gql } from 'react-apollo';
 
 export const authQuery = gql`
-  query auth {
-    user: auth {
-      _id
-      email
-      username
-      userIntro
-      userAvatar
-    }
+query auth {
+  user: auth {
+    _id
+    email
+    username
+    userIntro
+    userAvatar
   }
+}
 `;
 
 
 export const articlesQuery = gql`
-  query articlesQuery($articleId: ID) {
-    articles(_id: $articleId) {
-      _id
-      title
-      shareImg
-      description
-      publishDate
-      mark
-      readNumber
-      author {
-        _id
-        email
-        username
-        userAvatar
-        isSelf
-        followed
-        followedNum
-      }
-    }
-  }
-`;
-
-export const articleEditQuery = gql`
-  query articleEditQuery($articleId: ID!) {
-    article: articleEdit(_id: $articleId) {
-      _id
-      content
-      msg
-    }
-  }
-`;
-
-export const articleQuery = gql`
-  query articleQuery($articleId: ID!) {
-    article(_id: $articleId) {
-      _id
-      title
-      shareImg
-      description
-      content
-      publishDate
-      readNumber
-      collectNumber
-      # commentNumber
-      mark
-      collect
-      author {
-        _id
-        email
-        username
-        userAvatar
-        isSelf
-        followed
-        followedNum
-      }
-      comments {
-        _id
-        content
-        createDate
-        user {
-          _id
-          email
-          username
-          userAvatar
-        }
-      }
-    }
-  }
-`;
-
-export const articlePreviewQuery = gql`
-  query articleQuery($articleId : ID!) {
-    article(_id: $articleId) {
-      _id
-      title
-      publishDate
-      readNumber
-      author {
-        _id
-        email
-        username
-        userAvatar
-        isSelf
-        followed
-        followedNum
-      }
-    }
-  }
-`;
-
-export const authorInfoQuery = gql`
-  query authorInfoQuery($userId : ID!) {
-    user(_id: $userId) {
+query articlesQuery($articleId: ID) {
+  articles(_id: $articleId) {
+    _id
+    title
+    shareImg
+    description
+    publishDate
+    mark
+    readNumber
+    author {
       _id
       email
       username
-      userIntro
       userAvatar
-      followed
       isSelf
+      followed
+      followedNum
     }
   }
+}
+`;
+
+export const articleEditQuery = gql`
+query articleEditQuery($articleId: ID!) {
+  article: articleEdit(_id: $articleId) {
+    _id
+    content
+    msg
+  }
+}
+`;
+
+export const articleQuery = gql`
+query articleQuery($articleId: ID!) {
+  article(_id: $articleId) {
+    _id
+    title
+    shareImg
+    description
+    content
+    publishDate
+    readNumber
+    collectNumber
+    # commentNumber
+    mark
+    collect
+    author {
+      _id
+      email
+      username
+      userAvatar
+      isSelf
+      followed
+      followedNum
+    }
+    comments {
+      _id
+      content
+      createDate
+      user {
+        _id
+        email
+        username
+        userAvatar
+      }
+    }
+  }
+}
+`;
+
+export const articlePreviewQuery = gql`
+query articleQuery($articleId : ID!) {
+  article(_id: $articleId) {
+    _id
+    title
+    publishDate
+    readNumber
+    author {
+      _id
+      email
+      username
+      userAvatar
+      isSelf
+      followed
+      followedNum
+    }
+  }
+}
+`;
+
+export const authorInfoQuery = gql`
+query authorInfoQuery($userId : ID!) {
+  user(_id: $userId) {
+    _id
+    email
+    username
+    userIntro
+    userAvatar
+    followed
+    isSelf
+  }
+}
 `;
 
 export const userQuery = gql`

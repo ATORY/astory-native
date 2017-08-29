@@ -5,35 +5,31 @@ import { View, Text, TouchableWithoutFeedback, StyleSheet, Image } from 'react-n
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: 'center',
-    paddingTop: 15,
-    paddingBottom: 15,
-    marginLeft: 15,
-    marginRight: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: 'gray',
+    backgroundColor: '#fff',
+    // marginBottom: 10,
+    marginTop: 10,
+    padding: 15,
+  },
+  imgContainer: {
+    flex: 1,
+    justifyContent: 'center',
   },
   img: {
-    flex: 1,
-    height: 100,
-  },
-  bigblue: {
-    color: 'blue',
-    fontWeight: 'bold',
-    fontSize: 30,
-  },
-  red: {
-    color: 'red',
+    width: null,
+    height: 120,
   },
 });
 
-const ArticleCell = ({ navigate, title, shareImg }) => (
-  <TouchableWithoutFeedback onPress={() => navigate('Article', { name: 'Lucy' })}>
+const ArticleCell = ({ navigate, _id, title, shareImg }) => (
+  <TouchableWithoutFeedback onPress={() => navigate('Article', { _id, title, name: 'Lucy' })}>
     <View style={styles.container}>
-      <Image
-        style={styles.img}
-        source={{ uri: shareImg }}
-      />
+      <View style={styles.imgContainer}>
+        <Image
+          style={styles.img}
+          resizeMode='cover'
+          source={{ uri: shareImg }}
+        />
+      </View>
       <Text>{title}</Text>
     </View>
   </TouchableWithoutFeedback>
@@ -42,6 +38,7 @@ const ArticleCell = ({ navigate, title, shareImg }) => (
 
 ArticleCell.propTypes = {
   navigate: PropTypes.func.isRequired,
+  _id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   shareImg: PropTypes.string.isRequired,
 };

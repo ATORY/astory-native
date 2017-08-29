@@ -7,7 +7,7 @@ import MainScreen from './screens/MainScreen';
 import ArticleScreen from './screens/ArticleScreen';
 
 const networkInterface = createNetworkInterface({
-  uri: 'http://localhost:4000/graphql',
+  uri: 'https://atory.cc/api/graphql',
 });
 
 const client = new ApolloClient({
