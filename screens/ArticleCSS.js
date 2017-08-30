@@ -10,6 +10,10 @@ const css = `
   border: none;
 }
 
+.ql-editor {
+  white-space: initial;
+}
+
 img {
   max-width: 100%;
 }

@@ -48,7 +48,9 @@ class ArticleScreen extends React.Component {
         </View>
       );
     }
-    const content = article.content.replace('\n', '\r\n', 'g');
+    const content = Platform.OS === 'ios' ?
+      article.content :
+      article.content.replace(/\n/g, '<br />');
     const html = `
       <html>
       <head>
