@@ -2,7 +2,7 @@
   "name": "astory-native",
   "version": "0.0.0",
   "description": "Hello Expo!",
-  "author": null,
+  "author": "Chuantang Gu",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {

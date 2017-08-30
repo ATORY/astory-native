@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FlatList, ActivityIndicator, View, StyleSheet } from 'react-native';
+import { FlatList, ActivityIndicator, View, Text, StyleSheet,
+  Button, TouchableNativeFeedback, Platform } from 'react-native';
 import { graphql } from 'react-apollo';
 
 import ArticleCell from '../components/ArticleCell';
@@ -19,9 +20,39 @@ const styles = StyleSheet.create({
 });
 
 class MainScreen extends React.Component {
-  static navigationOptions = {
-    title: 'ATORY',
-  };
+  static navigationOptions = ({ navigation, screenProps }) => {
+    const logined = false;
+    const headerRight = Platform.OS === 'ios' ?
+      (
+        <View style={{ marginRight: 15 }}>
+          <Button
+            // color={screenProps.tintColor}
+            title='登录'
+            onPress={() => {
+              // navigation.navigate('Login');
+              navigation.navigate('User');
+            }}
+          />
+        </View>
+      ) : (
+        <View style={{ marginRight: 15 }}>
+          <TouchableNativeFeedback
+            onPress={() => {
+              // navigation.navigate('Login');
+              navigation.navigate('User');
+            }}
+          >
+            <Text style={{ fontSize: 16 }}>登录</Text>
+          </TouchableNativeFeedback>
+        </View>
+      );
+    return {
+      headerTintColor: 'black',
+      title: 'ATORY',
+      headerRight,
+    };
+  }
+
   static propTypes = {
     navigation: PropTypes.object.isRequired,
     data: PropTypes.shape({

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, TouchableWithoutFeedback, StyleSheet, Image,
-  Button, TouchableHighlight } from 'react-native';
+import { View, Text, TouchableWithoutFeedback,
+  StyleSheet, Image } from 'react-native';
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 // const myIcon = (<Icon name="rocket" size={30} color="#900" />)

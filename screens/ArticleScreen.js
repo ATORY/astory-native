@@ -12,7 +12,7 @@ class ArticleScreen extends React.Component {
     title: navigation.state.params.title,
   });
   static propTypes = {
-    // navigation: PropTypes.object.isRequired,
+    navigation: PropTypes.object.isRequired,
     data: PropTypes.shape({
       loading: PropTypes.bool,
       error: PropTypes.object,
@@ -27,8 +27,16 @@ class ArticleScreen extends React.Component {
     };
   }
 
-  setWebViewHight = () => {
-
+  onMessage = (event) => {
+    const data = event.nativeEvent.data;
+    let dataJson = '';
+    try {
+      dataJson = JSON.parse(data);
+    } catch (err) { console.error(err, data); }
+    const { name } = dataJson;
+    if (name === 'comment') {
+      this.props.navigation.navigate('Comment');
+    }
   }
 
   render() {
@@ -65,15 +73,25 @@ class ArticleScreen extends React.Component {
           <div class='ql-container ql-snow'>
             <div class='ql-editor'>
             ${content}
+            <div>
+              <button id='comment'>评论</button>
+            </div>
             </div>
           </div>
         </div>
+        
+        <script>
+          document.querySelector("#comment").onclick = function() {
+            window.postMessage('{"name": "comment"}');
+          }
+        </script>
       </body>
       </html>
     `;
     return (
       <WebView
         automaticallyAdjustContentInsets={false}
+        onMessage={this.onMessage}
         source={{ html }}
         style={{ flex: 1 }}
         scalesPageToFit={(Platform.OS === 'ios')}

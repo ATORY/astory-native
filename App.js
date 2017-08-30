@@ -5,6 +5,9 @@ import { ApolloProvider } from 'react-apollo';
 
 import MainScreen from './screens/MainScreen';
 import ArticleScreen from './screens/ArticleScreen';
+import LoginScreen from './screens/LoginScreen';
+import CommentScreen from './screens/CommentScreen';
+import UserScreen from './screens/UserScreen';
 
 const networkInterface = createNetworkInterface({
   uri: 'https://atory.cc/api/graphql',
@@ -17,11 +20,14 @@ const client = new ApolloClient({
 const Atory = StackNavigator({
   Home: { screen: MainScreen },
   Article: { screen: ArticleScreen },
+  Login: { screen: LoginScreen },
+  Comment: { screen: CommentScreen },
+  User: { screen: UserScreen },
 });
 
 const App = () => (
   <ApolloProvider client={client}>
-    <Atory />
+    <Atory screenProps={{ tintColor: 'red' }} />
   </ApolloProvider>
 );
 
