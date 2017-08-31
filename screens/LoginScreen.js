@@ -1,17 +1,41 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+
 
 class LoginScreen extends React.Component {
   static navigationOptions = () => ({
-    title: '登录',
+    title: 'Login',
   });
 
 
   render() {
     return (
-      <View>
-        <Text>Login</Text>
-      </View>
+      <Container>
+        <Header>
+          <Left>
+            <Button transparent>
+              <Icon name='menu' />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Header</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content>
+          <Text>
+            This is Content Section
+          </Text>
+        </Content>
+        <Footer>
+          <FooterTab>
+            <Button full>
+              <Text>Footer</Text>
+            </Button>
+          </FooterTab>
+        </Footer>
+      </Container>
     );
   }
 }

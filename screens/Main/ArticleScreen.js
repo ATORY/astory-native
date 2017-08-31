@@ -4,8 +4,7 @@ import { View, ActivityIndicator,
   Text, WebView, Platform } from 'react-native';
 import { graphql } from 'react-apollo';
 
-import { articleQuery } from '../graphql/querys';
-import webStyle from './ArticleCSS';
+import { articleQuery } from '../../graphql/querys';
 
 class ArticleScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -66,7 +65,25 @@ class ArticleScreen extends React.Component {
         <link rel='stylesheet' href='https://necolas.github.io/normalize.css/7.0.0/normalize.css' />
         <link rel='stylesheet' href='https://cdn.quilljs.com/1.2.6/quill.snow.css' />
         <link rel='stylesheet' href='https://cdn.bootcss.com/highlight.js/9.12.0/styles/atom-one-dark.min.css' />
-        ${webStyle}
+        <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        
+        .ql-container.ql-snow {
+          border: none;
+        }
+        
+        .ql-editor {
+          white-space: initial;
+        }
+        
+        img {
+          max-width: 100%;
+        }
+        </style>
       </head>
       <body>
         <div class='quill'>

@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import { FlatList, ActivityIndicator, View, Text, StyleSheet,
   Button, TouchableNativeFeedback, Platform } from 'react-native';
 import { graphql } from 'react-apollo';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { Header, Left, Body, Title, Right } from 'native-base';
 
-import ArticleCell from '../components/ArticleCell';
-import { articlesQuery } from '../graphql/querys';
+import ArticleCell from '../../components/ArticleCell';
+import { articlesQuery } from '../../graphql/querys';
 
 const styles = StyleSheet.create({
   container: {
@@ -47,9 +49,34 @@ class MainScreen extends React.Component {
         </View>
       );
     return {
-      headerTintColor: 'black',
+      // headerTintColor: 'black',
       title: 'ATORY',
-      headerRight,
+      // headerRight,
+      header: () => (
+        <Header>
+          <Left>
+            <MaterialIcons
+              color={screenProps.tintColor}
+              onPress={() => navigation.navigate('DrawerOpen')}
+              name='dehaze'
+              size={24}
+            />
+          </Left>
+          <Body>
+            <Title>ATORY</Title>
+          </Body>
+          <Right />
+        </Header>
+      ),
+      // headerLeft: <MaterialIcons
+      //   onPress={() => navigation.navigate('DrawerOpen')}
+      //   name='dehaze'
+      //   size={24}
+      //   style={{
+      //     // color: screenProps.tintColor,
+      //     marginLeft: 15,
+      //   }}
+      // />,
     };
   }
 

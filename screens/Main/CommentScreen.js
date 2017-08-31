@@ -4,6 +4,7 @@ import { View, Text } from 'react-native';
 class CommentScreen extends React.Component {
   static navigationOptions = () => ({
     title: '评论',
+    drawerLockMode: 'locked-closed',
   });
 
 
