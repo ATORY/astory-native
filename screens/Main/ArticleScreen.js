@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, ActivityIndicator,
-  Text, WebView, Platform } from 'react-native';
+  Text, WebView, Platform, StyleSheet } from 'react-native';
 import { graphql } from 'react-apollo';
 
 import { articleQuery } from '../../graphql/querys';
@@ -9,6 +9,10 @@ import { articleQuery } from '../../graphql/querys';
 class ArticleScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: navigation.state.params.title,
+    headerStyle: {
+      borderBottomColor: '#bbb',
+      borderBottomWidth: StyleSheet.hairlineWidth,
+    },
   });
   static propTypes = {
     navigation: PropTypes.object.isRequired,

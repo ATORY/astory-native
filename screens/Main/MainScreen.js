@@ -50,33 +50,37 @@ class MainScreen extends React.Component {
       );
     return {
       // headerTintColor: 'black',
+      headerStyle: {
+        borderBottomColor: '#bbb',
+        borderBottomWidth: StyleSheet.hairlineWidth,
+      },
       title: 'ATORY',
       // headerRight,
-      header: () => (
-        <Header>
-          <Left>
-            <MaterialIcons
-              color={screenProps.tintColor}
-              onPress={() => navigation.navigate('DrawerOpen')}
-              name='dehaze'
-              size={24}
-            />
-          </Left>
-          <Body>
-            <Title>ATORY</Title>
-          </Body>
-          <Right />
-        </Header>
-      ),
-      // headerLeft: <MaterialIcons
-      //   onPress={() => navigation.navigate('DrawerOpen')}
-      //   name='dehaze'
-      //   size={24}
-      //   style={{
-      //     // color: screenProps.tintColor,
-      //     marginLeft: 15,
-      //   }}
-      // />,
+      // header: () => (
+      //   <Header>
+      //     <Left>
+      //       <MaterialIcons
+      //         color={screenProps.tintColor}
+      //         onPress={() => navigation.navigate('DrawerOpen')}
+      //         name='dehaze'
+      //         size={24}
+      //       />
+      //     </Left>
+      //     <Body>
+      //       <Title>ATORY</Title>
+      //     </Body>
+      //     <Right />
+      //   </Header>
+      // ),
+      headerLeft: <MaterialIcons
+        onPress={() => navigation.navigate('DrawerOpen')}
+        name='dehaze'
+        size={24}
+        style={{
+          // color: screenProps.tintColor,
+          marginLeft: 15,
+        }}
+      />,
     };
   }
 
