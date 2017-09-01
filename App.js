@@ -9,9 +9,9 @@ import { ApolloProvider } from 'react-apollo';
 import MainNavigator from './screens/MainNavigator';
 import SettingsScreen from './screens/SettingsScreen';
 // import ArticleScreen from './screens/ArticleScreen';
-import LoginScreen from './screens/LoginScreen';
+import LoginNavigator from './screens/LoginNavigator';
 // import CommentScreen from './screens/CommentScreen';
-// import UserScreen from './screens/UserScreen';
+import UserScreen from './screens/UserScreen';
 
 const networkInterface = createNetworkInterface({
   uri: 'https://atory.cc/api/graphql',
@@ -123,9 +123,9 @@ const Atory = DrawerNavigator({
   Home: { screen: MainNavigator },
   Settings: { screen: SettingsScreen },
   // Article: { screen: ArticleScreen },
-  Login: { screen: LoginScreen },
+  Login: { screen: LoginNavigator },
   // Comment: { screen: CommentScreen },
-  // User: { screen: UserScreen },
+  User: { screen: UserScreen },
 }, {
   initialRouteName: 'Home',
   // drawerWidth: 250,

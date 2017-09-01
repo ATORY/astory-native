@@ -4,7 +4,6 @@ import { FlatList, ActivityIndicator, View, Text, StyleSheet,
   Button, TouchableNativeFeedback, Platform } from 'react-native';
 import { graphql } from 'react-apollo';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { Header, Left, Body, Title, Right } from 'native-base';
 
 import ArticleCell from '../../components/ArticleCell';
 import { articlesQuery } from '../../graphql/querys';

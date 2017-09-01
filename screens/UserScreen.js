@@ -8,7 +8,7 @@ import ArticleScreen from './User/Article';
 import DraftScreen from './User/Draft';
 import MarkScreen from './User/Mark';
 import LikeScreen from './User/Like';
-import SettingScreen from './User/Setting';
+// import SettingScreen from './User/Setting';
 
 const styles = StyleSheet.create({
   icon: {
@@ -30,36 +30,22 @@ const UserNests = TabNavigator({
   Like: {
     screen: LikeScreen,
   },
-  Setting: {
-    screen: SettingScreen,
-    path: '/settings',
-    navigationOptions: {
-      tabBarLabel: 'Settings',
-      tabBarIcon: ({ tintColor, focused }) => (
-        <Ionicons
-          name={focused ? 'ios-settings' : 'ios-settings-outline'}
-          size={26}
-          style={{ color: tintColor }}
-        />
-      ),
-    },
-  },
 }, {
   tabBarOptions: {
     // activeTintColor: '#e91e63',
   },
 });
 
-class UserScreen extends React.Component {
-  static navigationOptions = () => ({
-    title: '我的',
-  });
+// class UserScreen extends React.Component {
+//   static navigationOptions = () => ({
+//     title: '我的',
+//   });
 
-  render() {
-    return (
-      <UserNests />
-    );
-  }
-}
+//   render() {
+//     return (
+//       <UserNests />
+//     );
+//   }
+// }
 
-export default UserScreen;
+export default UserNests;

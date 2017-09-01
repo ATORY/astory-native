@@ -114,7 +114,7 @@
 
 
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 class SettingsScreen extends React.Component {
@@ -130,9 +130,14 @@ class SettingsScreen extends React.Component {
   });
 
   render() {
+    const { navigation } = this.props;
     return (
       <View>
         <Text>SettingsScreen</Text>
+        <Button
+          title='goback'
+          onPress={() => navigation.goBack()}
+        />
       </View>
     );
   }
