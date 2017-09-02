@@ -12,6 +12,21 @@ export const userLoginMutation = gql`
   }
 `;
 
+export const userLogoutMutation = gql`
+mutation logoutUser {
+  user: logoutUser {
+    _id
+    email
+    username
+    userIntro
+    userAvatar
+    followed
+    followedNum
+    token
+  }
+}
+`;
+
 export const newArticleMutation = gql`
   mutation newArticle($newArticle: ArticleInput!) {
     article: newArticle(article: $newArticle) {

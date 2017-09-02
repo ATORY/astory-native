@@ -4,6 +4,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { View, Text, StyleSheet, Button, AsyncStorage, TextInput } from 'react-native';
 import { graphql } from 'react-apollo';
 
+import { authQuery } from '../../graphql/querys';
 import { userLoginMutation } from '../../graphql/mutations';
 
 class LoginScreen extends React.Component {
@@ -47,6 +48,7 @@ class LoginScreen extends React.Component {
     if (password.length < 6) { this.setState({ redPWD: true, err: '密码长度不得小于6位' }); return; }
     mutate({
       variables: { user: { email, password } },
+      refetchQueries: [{ query: authQuery }],
     }).then(({ data: { user } }) => {
       if (user && user.msg) {
         this.setState({ err: user.msg });

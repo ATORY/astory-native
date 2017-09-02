@@ -8,6 +8,8 @@ query auth {
     username
     userIntro
     userAvatar
+    followed
+    followedNum
   }
 }
 `;
@@ -126,7 +128,6 @@ query userQuery($userId: ID!) {
     username
     userIntro
     userAvatar
-    isSelf
     followed
     followedNum
   }

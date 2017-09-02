@@ -9,7 +9,10 @@ import SettingsScreen from './screens/SettingsScreen';
 // import ArticleScreen from './screens/ArticleScreen';
 import LoginNavigator from './screens/LoginNavigator';
 // import CommentScreen from './screens/CommentScreen';
-import UserScreen from './screens/UserScreen';
+import UserArticleNav from './screens/User/ArticleNav';
+import UserDraftNav from './screens/User/DraftNav';
+import UserLikeNav from './screens/User/LikeNav';
+import UserMarkNav from './screens/User/MarkNav';
 
 import contentComponent from './components/DrawerContent';
 
@@ -41,11 +44,15 @@ const client = new ApolloClient({
 
 const Atory = DrawerNavigator({
   Home: { screen: MainNavigator },
+  UserArticleNav: { screen: UserArticleNav },
+  UserDraftNav: { screen: UserDraftNav },
+  UserLikeNav: { screen: UserLikeNav },
+  UserMarkNav: { screen: UserMarkNav },
+
   Settings: { screen: SettingsScreen },
   // Article: { screen: ArticleScreen },
   Login: { screen: LoginNavigator },
   // Comment: { screen: CommentScreen },
-  User: { screen: UserScreen },
 }, {
   initialRouteName: 'Home',
   // drawerWidth: 250,

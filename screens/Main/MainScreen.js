@@ -51,7 +51,7 @@ class MainScreen extends React.Component {
       // headerTintColor: 'black',
       headerStyle: {
         borderBottomColor: '#bbb',
-        borderBottomWidth: StyleSheet.hairlineWidth,
+        // borderBottomWidth: StyleSheet.hairlineWidth,
       },
       title: 'ATORY',
       // headerRight,

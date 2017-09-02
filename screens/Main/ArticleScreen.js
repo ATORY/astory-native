@@ -11,7 +11,7 @@ class ArticleScreen extends React.Component {
     title: navigation.state.params.title,
     headerStyle: {
       borderBottomColor: '#bbb',
-      borderBottomWidth: StyleSheet.hairlineWidth,
+      // borderBottomWidth: StyleSheet.hairlineWidth,
     },
   });
   static propTypes = {

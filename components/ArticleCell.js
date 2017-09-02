@@ -19,13 +19,16 @@ const styles = StyleSheet.create({
   imgContainer: {
     flex: 1,
     justifyContent: 'center',
+    marginBottom: 10,
   },
   img: {
     width: null,
-    height: 120,
+    height: 100,
   },
+
   user: {
     flex: 1,
+    marginTop: 20,
     // flexWrap: 'nowrap',
     alignItems: 'stretch',
     // justifyContent: 'space-between',
@@ -43,8 +46,8 @@ const ArticleCell = ({ navigate, _id, title, shareImg, publishDate, author }) =>
           source={{ uri: shareImg }}
         />
       </View>
-      <View style={{ paddingTop: 10, paddingBottom: 25 }}>
-        <Text style={{ fontSize: 20 }}>{title}</Text>
+      <View>
+        <Text style={{ fontSize: 18 }}>{title}</Text>
       </View>
       <View style={styles.user}>
         <View style={{ flex: 5, height: 50, flexDirection: 'row', alignItems: 'center' }}>
