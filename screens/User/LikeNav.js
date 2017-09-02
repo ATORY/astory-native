@@ -36,7 +36,7 @@ const UserLikeNavigator = StackNavigator({
 });
 
 UserLikeNavigator.navigationOptions = {
-  drawerLabel: '我的收藏',
+  drawerLabel: '收藏',
   drawerIcon: ({ tintColor }) => (
     <MaterialIcons
       name='favorite'

@@ -36,7 +36,7 @@ const UserDraftNavigator = StackNavigator({
 });
 
 UserDraftNavigator.navigationOptions = {
-  drawerLabel: '我的草稿',
+  drawerLabel: '草稿',
   drawerIcon: ({ tintColor }) => (
     <MaterialIcons
       name='drafts'

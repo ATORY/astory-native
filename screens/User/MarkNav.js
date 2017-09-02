@@ -36,7 +36,7 @@ const UserMarkNavigator = StackNavigator({
 });
 
 UserMarkNavigator.navigationOptions = {
-  drawerLabel: '我的标记',
+  drawerLabel: '标记',
   drawerIcon: ({ tintColor }) => (
     <MaterialIcons
       name='bookmark'

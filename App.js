@@ -44,6 +44,7 @@ const client = new ApolloClient({
 
 const Atory = DrawerNavigator({
   Home: { screen: MainNavigator },
+
   UserArticleNav: { screen: UserArticleNav },
   UserDraftNav: { screen: UserDraftNav },
   UserLikeNav: { screen: UserLikeNav },
@@ -55,6 +56,10 @@ const Atory = DrawerNavigator({
   // Comment: { screen: CommentScreen },
 }, {
   initialRouteName: 'Home',
+  order: [
+    'Home', 'UserArticleNav', 'UserDraftNav', 'UserLikeNav', 'UserMarkNav',
+    'Settings', 'Login',
+  ],
   // drawerWidth: 250,
   drawerWidth: (Dimensions.get('window').width * 2) / 3,
   contentComponent,

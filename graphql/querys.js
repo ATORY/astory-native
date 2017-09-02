@@ -135,8 +135,8 @@ query userQuery($userId: ID!) {
 `;
 
 export const userArticlesQuery = gql`
-query userArticlesQuery($userId: ID!, $draft: Boolean) {
-  user(_id: $userId) {
+query userArticlesQuery($userId: ID, $isSelf: Boolean, $draft: Boolean) {
+  user(_id: $userId, isSelf: $isSelf) {
     _id
     articles(draft: $draft) {
       _id
@@ -152,8 +152,8 @@ query userArticlesQuery($userId: ID!, $draft: Boolean) {
 `;
 
 export const userDraftsQuery = gql`
-query userDraftsQuery($userId: ID!, $draft: Boolean) {
-  user(_id: $userId) {
+query userDraftsQuery($userId: ID, $isSelf: Boolean, $draft: Boolean) {
+  user(_id: $userId, isSelf: $isSelf) {
     _id
     drafts: articles(draft: $draft) {
       _id

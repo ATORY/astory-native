@@ -116,7 +116,7 @@ class ContentComponent extends React.Component {
     }
     const login = !!(user && user.email);
     let lists = navigation.state.routes.map((route, index) => {
-      // console.log('route', route);
+      // console.log('route', route.key, index);
       const {
         activeItemKey,
         activeTintColor,
@@ -170,7 +170,28 @@ class ContentComponent extends React.Component {
       );
     });
     // console.log(lists);
-    lists = [lists[0], lists[lists.length - 2]];
+    const main = lists.splice(0, 1);
+    const users = lists.splice(0, 4);
+    const usersView = (
+      <View
+        key='userView'
+        style={{
+          borderBottomWidth: StyleSheet.hairlineWidth,
+          borderTopWidth: StyleSheet.hairlineWidth,
+          borderColor: '#ddd',
+        }}
+      >
+        <Text style={[styles.label, { paddingLeft: 20 }]}>
+          我的
+        </Text>
+        {users}
+      </View>
+    );
+    if (login) {
+      lists = [main, usersView, [...lists]];
+    } else {
+      lists = [main, [...lists]];
+    }
     return (
       <ScrollView>
         <View style={styles.container}>
